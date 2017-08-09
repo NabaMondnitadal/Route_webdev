@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>CONTACT US</title>
+<style type="text/css">
+	body{font-size:20pt;font-family:gabriola;color:black;background-image:url("bc.png")}
+	form{font-family:gabriola;align:center;}
+	label{float:left;width:100px;clear:left;font-size:20px;text-align:left;padding-right:10px;margin-top:10px;font-weight:bold;}
+	input,textarea{margin-top:20px;display:block;}
+	#mySubmit{margin-center:110px;}
+	fieldset{width:500px;border:5px ridge green; font-family:gabriola;padding:10px;background-color:skyblue;}
+	legend{font-family:gabriola,"Times New Roman",serif;font-weight:bold;font-size:20px;}
+	a:link{color:black;font-size:20pt;font-family:gabriola;font-style:bold;}
+	a:hover{color:green;text-decoration:underline;font-size:20pt;font-family:gabriola;font-style:bold;}
+	
+	
+
+</style>
+<link rel="icon" href="k.png" type="image/x-icon">
+<script language="javascript">
+function textcheck()
+{
+	if(event.keyCode>=65 && event.keyCode<=91)
+	{
+	}
+	else if(event.keyCode>=97 && event.keyCode<=122)
+	{
+	}
+	else
+	{
+		alert("you are entering wrong data");
+		event.keyCode=0;
+	}
+}
+</script>
+</head>
+<body>
+<center><form name="f1" action="thank.html" enctype="text/html" method="get">
+
+<fieldset>
+<legend>CONTACT US</legend>
+<label>Name:<input type="text" name="name:" id="name:" size=30 required="required" onKeyPress="textcheck()"></label>
+<label>Email:<input type="email" name="Email" id="Email" size=30 required="required"></label>
+<label>Comments:<textarea name="myComments" id="myComments" rows="10" cols="68"></textarea></label>
+
+</fieldset>
+<input id="mySubmit" type="submit" value="submit">
+</form>
+
+<a href="pro.html"><h5 align="center">HOME</h5></a>
+</body>
+</html>

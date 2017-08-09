@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head><title>FIND YOUR ROUTE</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Directions service</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+    </style>
+<link rel="icon" href="k.png" type="image/x-icon">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var park_circus = new google.maps.LatLng(22.54320,88.36610);
+  var mapOptions = {
+    zoom:12,
+    center: park_circus
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  directionsDisplay.setMap(map);
+}
+
+function calcRoute() {
+  var start = document.getElementById('start').value;
+  var end = document.getElementById('end').value;
+  var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode.TRANSIT
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="panel">
+    <b>Start: </b>
+    <select id="start" onchange="calcRoute();">
+      <option value=22.54302,88.36887>Maidan</option>
+      <option value=22.60551,88.46970>New Town</option>
+      <option value=22.65664,88.36311>Dakkhineshwar</option>
+      <option value=22.51695,88.34587>Kalighat</option>
+      <option value=22.59577,88.26364>Howrah</option>
+	  <optgroup label="Attractions">
+      <option value=22.56286,88.34923>Shadeed Minar</option>
+      <option value=22.56726,88.34752>Raj Bhawan</option>
+      <option value=22.56465,88.34329>Eden Gardens</option>
+      <option value=22.55263,88.36337>Mother House</option>
+      <option value=22.54481,88.34256>Victoria Memorial</option>
+      <option value=22.53576,88.33214>Alipore Zoo</option>
+      <option value=22.55789,88.35113>Indian Museum</option>
+		<option value=22.55551,88.32986>Vidyasagar Setu</option>
+	  <option value=22.65496,88.35770>Dakkhineshwar Temple</option>
+	  <option value=22.62638,88.35550>Belur Math</option>
+	  <option value=22.66066,88.36348>Adyapith Temple</option>
+	  <option value=22.58500,88.34716>Howrah Bridge</option>
+	  <option value=22.59942,88.47208>Mother Wax Museum</option>
+	  <option value=22.60215,88.46579>Eco Park</option>
+	  <option value=22.58013,88.47051>Rabindra Tirtha</option>
+	  <option value=22.58206,88.44841>Nazrul Tirtha</option>
+	  <option value=22.52024,88.342099>Kalighat Temple</option>
+	  
+	  
+	  
+	  </optgroup>
+    </select>
+    <b>End: </b>
+    <select id="end" onchange="calcRoute();">
+       <option value=22.54302,88.36887>Maidan</option>
+      <option value=22.60551,88.46970>New Town</option>
+      <option value=22.65664,88.36311>Dakkhineshwar</option>
+      <option value=22.51695,88.34587>Kalighat</option>
+      <option value=22.59577,88.26364>Howrah</option>
+	  <optgroup label="Attractions">
+      <option value=22.56286,88.34923>Shadeed Minar</option>
+      <option value=22.56726,88.34752>Raj Bhawan</option>
+      <option value=22.56465,88.34329>Eden Gardens</option>
+      <option value=22.55263,88.36337>Mother House</option>
+      <option value=22.54481,88.34256>Victoria Memorial</option>
+      <option value=22.53576,88.33214>Alipore Zoo</option>
+      <option value=22.55789,88.35113>Indian Museum</option>
+		<option value=22.55551,88.32986>Vidyasagar Setu</option>
+	  <option value=22.65496,88.35770>Dakkhineshwar Temple</option>
+	  <option value=22.62638,88.35550>Belur Math</option>
+	  <option value=22.66066,88.36348>Adyapith Temple</option>
+	  <option value=22.58500,88.34716>Howrah Bridge</option>
+	  <option value=22.59942,88.47208>Mother Wax Museum</option>
+	  <option value=22.60215,88.46579>Eco Park</option>
+	  <option value=22.58013,88.47051>Rabindra Tirtha</option>
+	  <option value=22.58206,88.44841>Nazrul Tirtha</option>
+	  <option value=22.52024,88.342099>Kalighat Temple</option>
+    </select>
+    </div>
+	    <div id="map-canvas"></div>
+  </body>
+</html>

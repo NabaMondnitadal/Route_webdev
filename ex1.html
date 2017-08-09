@@ -1,0 +1,51 @@
+<html>
+<head><title>PROJECT</title>
+
+<style>
+body
+{
+/*Remove below line to make bgimage NOT fixed
+background-attachment:fixed;*/
+
+background-repeat: no-repeat;
+
+/*Use center center in place of 300 200 to center bg image*/
+background-position:6 6;
+}
+</style>
+
+<script language="JavaScript">
+var bgimages=new Array()
+bgimages[0]="dak1.jpg"
+bgimages[1]="eg1.jpg"
+bgimages[2]="hb1.jpg"
+bgimages[3]="kk1.jpg"
+bgimages[4]="vc1.jpg"
+bgimages[5]="im1.jpg"
+
+
+bgimages[6]="bm11.jpg"
+bgimages[7]="bp1.jpg"
+
+//preload images
+var pathToImg=new Array()
+for (i=0;i<bgimages.length;i++){
+pathToImg[i]=new Image()
+pathToImg[i].src=bgimages[i]
+}
+
+var inc=-1
+
+function bgSlide(){
+if (inc<bgimages.length-1)
+inc++
+else
+inc=0
+document.body.background=pathToImg[inc].src
+}
+
+if (document.all||document.getElementById)
+window.onload=new Function('setInterval("bgSlide()",3000)')
+
+</script>
+</head>

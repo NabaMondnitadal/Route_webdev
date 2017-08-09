@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>START TRAVELLING</title>
+<style type="text/css">
+	body{font-size:20pt;font-family:gabriola;color:blue;background-image:url("bc.png")}
+	h1{font-size:25pt;font-family:gabriola;font-style:bold;text-align:center;background:skyblue;color:blue;border:thick solid black;}
+	p{text-incident:0.5in;margin-left:50px;margin-right:50px;}
+	h3{font-size:20pt;font-family:gabriola;font-style:bold;text-align:center;color:blue;}
+	h2{font-size:35pt;font-family:gabriola;font-style:bold;text-align:center;color:black;}
+	a:link{color:black;font-size:20pt;font-family:gabriola;font-style:bold;}
+	a:hover{color:green;text-decoration:underline;font-size:20pt;font-family:gabriola;font-style:bold;}
+	table{text-align:center;background:skyblue;color:black;font-size:20pt;border:thick dotted blue;font-family:gabriola;}
+	.design{text-align:center;color:black;font-size:20pt;font-family:gabriola;border:thin solid green;}
+</style>
+<link rel="icon" href="k.png" type="image/x-icon">
+</head>
+<body>
+<form action=fetch.php method=post>
+<center>
+<h2>GET STARTED</h2>
+<table cellspacing=10 cellpadding=10>
+<tr>
+<td>ORIGIN</td>
+<td><input type=text name=n1></td>
+</tr>
+<tr>
+<td>DESTINATION</td>
+<td><input type=text name=n2></td>
+</tr>
+<tr>
+<td>TYPE</td>
+<td><select name=n3>
+<optgroup label="BUS">
+
+<option value="AC Bus">AC Bus</option>
+<option value="General Bus">General Bus</option>
+
+</optgroup>
+
+<optgroup label="TAXI">
+
+<option value="AC Taxi">AC Taxi</option>
+<option value="General Taxi">General Taxi</option>
+</optgroup>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan=2><input type=submit value=SHOW>
+</form>
+</td>
+</tr>
+</table>
+<br/>
+<table class="design" align="center">
+<tr>
+<td><a href="p6.html"><img src="mp.jpg" width=50 height=50></td></a>
+	<td bgcolor="skyblue" width=200 height=30 align="center"><a href="map.html">Find your route!</a></td>
+</tr>
+</table>
+<a href="pro.html"><h5 align="center">HOME</h5></a>
+</body></html>
